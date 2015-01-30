@@ -7,6 +7,47 @@
     android:layout_alignParentLeft="true"
     android:layout_alignParentTop="true"
     android:background="@color/action_bar_bg"
-    android:minHeight="?attr/actionBarSize"
-    android:navigationIcon="@drawable/ic_drawer">
+    android:minHeight="?attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/toolbarLogo"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drawer"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_launcher"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_bar_title"
+            android:textSize="@dimen/action_bar_title"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/toolbarNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_warning"/>
+    </LinearLayout>
+
 </android.support.v7.widget.Toolbar>
