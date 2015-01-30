@@ -12,7 +12,8 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.bnsantos.navigationdrawer.R;
-import com.bnsantos.navigationdrawer.fragment.dummy.DummyContent;
+import com.bnsantos.navigationdrawer.Utils;
+import com.bnsantos.navigationdrawer.adapter.ItemAdapter;
 
 /**
  * A fragment representing a list of Items.
@@ -34,7 +35,7 @@ public class CenterFragment extends Fragment implements AbsListView.OnItemClickL
      * The Adapter which will be used to populate the ListView/GridView with
      * Views.
      */
-    private ListAdapter mAdapter;
+    private ItemAdapter mAdapter;
 
     public static CenterFragment newInstance() {
         CenterFragment fragment = new CenterFragment();
@@ -52,9 +53,7 @@ public class CenterFragment extends Fragment implements AbsListView.OnItemClickL
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
+        mAdapter = new ItemAdapter(getActivity(), Utils.generateRamdomItems(getResources().getStringArray(R.array.countries)));
     }
 
     @Override

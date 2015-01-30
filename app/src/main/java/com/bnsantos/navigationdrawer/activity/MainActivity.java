@@ -7,13 +7,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.bnsantos.navigationdrawer.R;
 import com.bnsantos.navigationdrawer.fragment.CenterFragment;
-import com.bnsantos.navigationdrawer.fragment.LeftFragment;
 
 import java.lang.ref.WeakReference;
 
@@ -76,14 +73,14 @@ public class MainActivity extends ActionBarActivity {
         };
 
         if (savedInstanceState == null) {
-            initFragments();
+            initFragment();
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.content_frame, mCenter.get())
                     .commit();
         }
     }
 
-    private void initFragments(){
+    private void initFragment(){
         mCenter = new WeakReference<Fragment>(CenterFragment.newInstance());
     }
 }
