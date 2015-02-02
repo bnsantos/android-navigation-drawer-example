@@ -83,4 +83,11 @@ public class MainActivity extends ActionBarActivity {
     private void initFragment(){
         mCenter = new WeakReference<Fragment>(CenterFragment.newInstance());
     }
+
+    public void togle(){
+        if(mDrawerLayout!=null){
+            mDrawerLayout.closeDrawer(Gravity.START);
+            mDrawerLayout.closeDrawer(Gravity.END);
+        }
+    }
 }
