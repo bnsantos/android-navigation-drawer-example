@@ -3,7 +3,8 @@
     android:layout_height="match_parent"
     tools:context="com.bnsantos.navigationdrawer.fragment.RightFragment"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:clickable="true">
 
     <TextView
         android:layout_width="wrap_content"
